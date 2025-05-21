@@ -1,0 +1,1462 @@
+x<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wss | หน้าแรก</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #c3c3c3;
+    }
+
+    header {
+      background: linear-gradient(to bottom, #000000, #000000, #000000, #000000, #000000);
+      color: rgb(255, 255, 255);
+      padding: 20px;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-content img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    .brand-text p {
+      margin: 4px 0;
+    }
+
+    header img {
+      max-height: 100px;
+      margin-bottom: 10px;
+    }
+
+    .menu {
+      position: relative;
+      display: inline-block;
+      font-family: sans-serif;
+    }
+
+    .menu-button {
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 200px;
+      max-height: 200px;
+      overflow-y: auto;
+      box-shadow: 0px 8px 16px rgba(106, 106, 106, 0.2);
+      display: none;
+      z-index: 1000;
+    }
+
+    .menu:hover .dropdown {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .carousel-item img {
+      width: 100px;
+      height: 400px;
+      object-fit: cover;
+      margin: 0 auto;
+    }
+
+    .swiper-slide {
+      width: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mainbox {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      object-fit: contain;
+    }
+
+
+
+
+    .box {
+      background-color: #ffffff;
+      width: auto;
+      max-height: 350px;
+      padding: 14px 15px 0px 15px;
+      margin-top: 10px;
+      margin: 10px;
+      border-radius: 8px;
+
+
+    }
+
+    .t {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .text-lefts {
+      margin-left: 30px;
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    .text-right {
+     float: right;
+     margin-right: 0px;
+      font-size: large;
+      font-weight: bold;
+    }
+
+    .container-cate {
+      width: 100%;
+      max-height: auto;
+      margin: 0 auto;
+
+
+
+    }
+
+    .category-product {
+      width: 100%;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(10, minmax(80px, 1fr));
+      padding: 10px;
+      margin: auto;
+      object-fit: contain;
+
+    }
+
+    .category-product img {
+      width: 40%;
+      height: auto;
+    }
+
+
+
+    .cate-product-crop {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      display: block;
+
+      margin: 0px 40px;
+      object-fit: contain;
+      transition: transform 0.2s ease-in-out;
+
+    }
+
+
+
+    .cate-product-crop:hover {
+      transform: scale(1.1);
+    }
+
+
+    .name-product {
+      font-size: small;
+      font-weight: bold;
+      color: #626262;
+
+    }
+
+    .count {
+      color: #333;
+      font-size: x-small;
+    }
+
+    .align-text {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      margin: 0%;
+
+    }
+
+    .header-texts {
+      width: 50%;
+      display: flex;
+      flex-direction: column-reverse;
+      margin: 0%;
+      padding: auto;
+
+    }
+
+    .container-section-gap {
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+    }
+
+
+
+
+    .swiper-slide .card {
+      height: auto;
+      padding: 10px;
+      margin: auto;
+      font-size: 0.8rem;
+
+    }
+
+    .card img {
+      width: 200px;
+        height: 80px;
+        object-fit: cover;
+        display: block;
+        margin: 20px;
+        margin-bottom: 0;
+        object-fit: contain;
+        transition: tranform 0.2s ease-in-out;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+   
+
+
+    .img01:hover {
+      transform: scale(1.1);
+      object-fit: contain;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .card-title {
+      font-weight: bolder;
+      color: #000000;
+    }
+
+    .swiper {
+      margin: auto;
+      padding: auto;
+    }
+
+    .swiper-button-next {
+      color: #333;
+      margin: auto;
+    }
+
+    .swiper-button-prev {
+      color: #333;
+      margin: auto;
+    }
+
+
+    .card-img-top {
+      height: 70px;
+      width: auto;
+      padding: auto;
+      margin-left: 20px;
+      object-fit: contain;
+
+
+    }
+
+    .card {
+      width: 100%;
+      height: auto;
+      border: none;
+      padding: 10px;
+      margin: 10px auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      object-fit: cover;
+      min-height: auto;
+      font-size: small;
+      color: #bfbfbf;
+
+
+    }
+
+    .price {
+      color: #00a226;
+      font-weight: bold;
+      justify-content: center;
+    }
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+
+
+
+
+    footer {
+      background: linear-gradient(#626262, #000000);
+      color: #eee;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1120px) {
+      .brand-text h1 {
+        font-size: 2em;
+      }
+      .carousel-item img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;}
+
+      .category-product {
+        grid-template-columns: repeat(6, minmax(80px, 1fr));
+        margin: auto;
+
+      }
+
+      .card {
+        font-size: smaller;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+
+      .header img {
+        max-width: 50x;
+        height: auto;
+
+      }
+      .carousel-item img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;}
+
+      .brand-text h1 {
+        font-size: 1em;
+      }
+
+      .category-product {
+        grid-template-columns: repeat(6, minmax(80px, 1fr));
+        margin: auto;
+
+      }
+
+      .card {
+        font-size: smaller;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-content img {
+        max-width: 50px;
+        height: auto;
+
+      }
+      .carousel-item img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+      .category-product {
+        grid-template-columns: repeat(4, minmax(80px, 1fr));
+        justify-content: center;
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+      }
+
+      .dropdown.show {
+        display: block;
+        animation: slideDown 0.3s ease;
+      }
+
+      .brand-text h1 {
+        font-size: 1em;
+      }
+
+      .brand-text p {
+        font-size: xx-small;
+        margin: 4px 0;
+      }
+
+      .cate-product-crop {
+        width: 40px;
+        height: 40px;
+      }
+
+     
+      .card-title {
+        font-size: small;
+      }
+
+      .price {
+        font-size: small;
+      }
+
+      .card img {
+        width: 100px;
+        height: 80px;
+        object-fit: cover;
+        display: block;
+        margin: 20px;
+        margin-bottom: 0;
+        object-fit: contain;
+        transition: tranform 0.2s ease-in-out;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+      }
+
+
+      .img01:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    @media (max-width: 375px) {
+      .header-content {
+        font-size: 0.7em;
+      }
+
+      .header-content img {
+        max-width: 50x;
+        height: auto;
+
+      }
+
+      .brand-text h1 {
+        font-size: 1em;
+      }
+
+      .brand-text p {
+        font-size: 0.7em;
+        margin: 4px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="logo.jpg" alt="โลโก้แบรนด์">
+      <div class="brand-text">
+        <h1>𝐖𝐞𝐞𝐫𝐚𝐩𝐨𝐧𝐠 𝐒𝐨𝐮𝐧𝐝𝐬𝐲𝐬𝐭𝐞𝐦</h1>
+        <p style="font-size: smaller;">จำหน่าย - ติดตั้ง - Alignment - ระบบเสียงครบวงจร</p>
+        <p style="font-size: smaller;">ผู้ผลิตและจำหน่ายตู้ลำโพงคุณภาพ</p>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- บาร์นำทาง -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://www.facebook.com/weerapong.sound.system"><img src="logo.jpg" height="30"
+          width="30"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <div class="navbar-nav">
+          <a class="nav-link" href="mainweb.html">หน้าแรก</a>
+          <a class="nav-link" href="aboutus.html">เกี่ยวกับเรา</a>
+          <div class="menu">
+            <div class="menu-button"><a class="nav-link">สินค้า </a></div>
+            <div class="dropdown">
+              <a href="ตู้เบส.html">ตู้เบส</a>
+              <a href="ตู้เสียงกลาง.html">ตู้เสียงกลาง</a>
+              <a href="ตู้คอลัมม์.html">ตู้เสียงคอลัมม์</a>
+              <a href="ดอกลำโพง.html">ดอกลำโพง</a>
+              <a href="พาวเวอร์แแอมป์.html">พาวเวอร์แอมป์</a>
+              <a href="ปากหลม.html">ปากแหลม</a>
+              <a href="สายลำโพง.html">สายลำโพง</a>
+              <a href="ไมโครโฟน.html">ไมโครโฟน</a>
+              <a href="มิกเซอร์.html">มิกเซอร์</a>
+              <a href="ครอส.html">ดิจิตัลครอสโอเวอร์</a>
+              <a href="ปลั๊กไฟ.html">ปลั๊กไฟ</a>
+              <a href="เฟรม.html">เฟรมแขวน</a>
+
+            </div>
+          </div>
+          <div class="menu">
+            <div class="menu-button"><a class="nav-link">บริการ</a></div>
+            <div class="dropdown">
+              <a href="รับติดตั้ง.html">รับติดตั้ง</a>
+              <a href="Alignment.html">Alignment</a>
+              <a href="รับผลิต.html">รับผลิต</a>
+              <a href="ระบบKTV.html">ระบบKTV</a>
+            </div>
+          </div>
+          <a class="nav-link" href="contact.html">ติดต่อเรา</a>
+        </div>
+        <form class="d-flex">
+          <input id="search" class="form-control" type="search" placeholder="ค้นหาสินค้า..." aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- หน้าต่างสไลด์ -->
+  <div id="carouselWSS" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="logowssx.jpg" class="d-block w-100" alt="โปรโมชั่น 1">
+      </div>
+      <div class="carousel-item">
+        <img src="poster2.png" class="d-block w-100" alt="โปรโมชั่น 2">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselWSS" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselWSS" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  <!-- กล่องหมวดหมุ่ -->
+  <div class="mainbox">
+    <div class="box">
+      <h2 class="text-lefts">หมวดหมู่สินค้า/Category Product</h2>
+      <div class="container-cate">
+
+        <div class="category-product">
+          <div class="img-product-cate"><img src="เซ็ต1-removebg-preview.png" class="cate-product-crop" alt="หมวด1">
+          </div>
+          <div class="align-text">
+            <a href="เซ็ตเครื่องเสียง.html" class="link"><div class="name-product">เซ็ตเครื่องเสียง</div></a>
+          </div>
+
+
+          <!-- ตู้ลำโพง -->
+
+          <div class="img-product-cate"><img src="image/ada2.jpg" class="cate-product-crop" width="100%" alt="หมวด1">
+          </div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+                <div class="name-product">ตู้ลำโพง</div>
+              </div>
+              <div class="dropdown">
+                <a href="ตู้เบส.html">ตู้เบส</a>
+                <a href="ตู้เสียงกลาง.html">ตู้เสียงกลาง</a>
+                <a href="ตู้คอลัมม์.html">ตู้คอลัมม์</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ดอกลำโพง -->
+
+          <div class="img-product-cate"><img
+              src="https://tse4.mm.bing.net/th?id=OIP.fcQgfH0hG_jBu2c6rXtXWgHaHa&pid=Api&P=0&h=180"
+              class="cate-product-crop" width="100%" alt="หมวด1"></div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+                <div class="name-product">ดอกลำโพง</div>
+              </div>
+              <div class="dropdown">
+                <a href="LoundSpeak-8.html">ดอก 8"</a>
+                <a href="LoundSpeak-10.html">ดอก 10"</a>
+                <a href="LoundSpeak-12.html">ดอก 12"</a>
+                <a href="LoundSpeak-15.html">ดอก 15"</a>
+                <a href="LoundSpeak-18.html">ดอก 18"</a>
+                <a href="LoundSpeak-21.html">ดอก 21"</a>
+                <a href="LoundSpeak-24.html">ดอก 24"</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- พาวเวอร์แอมป์ -->
+
+          <div class="img-product-cate"><img
+              src="https://tse4.mm.bing.net/th?id=OIP.aSBuaixrLz-x0GNenWhKYAHaDf&pid=Api&P=0&h=180"
+              class="cate-product-crop" alt="หมวด1" width="100%"></div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+                <a href="พาวเวอร์แอมป์.html" class="link"><div class="name-product">พาวเวอร์แอมป์</div></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ไมโครโฟน -->
+
+          <div class="img-product-cate"><img
+              src="https://tse2.mm.bing.net/th?id=OIP.5WPzA0gwpLeB2GNp0EZs7wHaHa&pid=Api&P=0&h=180"
+              class="cate-product-crop" alt="หมวด1"></div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+           <div class="name-product"><wbr>ไมโครโฟน</wbr></div>
+              </div>
+              <div class="dropdown">
+                <a href="Microphone-1.html">ไมค์สาย</a>
+                <a href="Microphone-2.html">ไมค์ไร้สาย/ไมค์ลอย</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ปากแหลม -->
+
+          <div class="img-product-cate"><img src="pictureweb/th-removebg-preview (1).png"
+              class="cate-product-crop" alt="หมวด1" width="100%"></div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+                <a href="ปากแหลม.html" class="link"><div class="name-product"><wbr>ปากแหลม</wbr></div></a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- มิกเซอร์ -->
+
+          <div class="img-product-cate"><img
+              src="https://tse4.mm.bing.net/th?id=OIP.STfpvirLHWfZtmojyA2bKQHaFm&pid=Api&P=0&h=180"
+              class="cate-product-crop" alt="หมวด1"></div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+               <a href="มิกเซอร์.html" class="link"> <div class="name-product"><wbr>มิกเซอร์</wbr></div></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- สายลำโพง -->
+
+          <div class="img-product-cate"><img
+              src="https://musicspace.co.th/wp-content/uploads/2022/11/behringer_glc-300_speaker_cable.jpg"
+              class="cate-product-crop" alt="หมวด1"></div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+                <a href="สายลำโพง.html" class="link"><div class="name-product"><wbr>สายลำโพง</wbr></div></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ครอส -->
+
+          <div class="img-product-cate"><img src="image/crossover.png" class="cate-product-crop" alt="หมวด1"></div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+                <a href="ครอส.html" class="link"><div class="name-product"><wbr>ดิจิตัล ครอสโอเวอร์</wbr></div></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- เซ็ตแร็ค -->
+
+          <div class="img-product-cate"><img src="image/แร็ค-removebg-preview (1).png" class="cate-product-crop" alt="หมวด1" width="80px" height="auto">
+          </div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+               <a href="เซ็ตแร็ค.html" class="link"> <div class="name-product"><wbr>เซ็ตแร็ค</wbr></div></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ปลั๊กไฟ -->
+
+          <div class="img-product-cate"><img src="plug.png" class="cate-product-crop" alt="หมวด1"></div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+               <a href="ปลั๊กไฟ.html" class="link"><div class="name-product"><wbr>ปลั๊กไฟ</wbr></div></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- เฟรม -->
+
+          <div class="img-product-cate"><img src="image/frame.png" class="cate-product-crop" alt="หมวด1"></div>
+          <div class="align-text">
+            <div class="menu">
+              <div class="menu-button">
+                <a href="เฟรม.html" class="link"><div class="name-product"><wbr>เฟรมแขวน</wbr></div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- กล่องโชว์สินค้า -->
+  <div class="mainbox">
+    <div class="box">
+      <div class="container-section-gap">
+        <h2 class="text-lefts">สินค้าแนะนำ/Suggest</h2>
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+
+            <!-- สินค้า 1 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Ada 12s.html" style="text-decoration: none;">
+                <div class="card">
+                  <img src="image/ada2.jpg" class="card-img-top" alt="สินค้า 1">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Ada12s</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿9900</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 2 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="TURBO18V2.html" style="text-decoration: none;">
+                <div class="card">
+                   <img src="pictureweb/Turbo-18v2-2-removebg-preview.png" class="card-img-top" alt="สินค้า 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">TURBO-18V2</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿8500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 3 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="BV-18y.html" style="text-decoration: none;">
+                <div class="card">
+                   <img src="pictureweb/Bv-18y-1-removebg-preview.png" class="card-img-top" alt="สินค้า 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">BV-18</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿8500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 4 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="JSUB-18.html" style="text-decoration: none;">
+                <div class="card">
+                   <img src="pictureweb/jsub18-3-removebg-preview.png" class="card-img-top" alt="สินค้า 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">JSUB-18</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿8500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 5 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="TURBO18.html" style="text-decoration: none;">
+                <div class="card">
+                   <img src="pictureweb/Turbo-18-2-removebg.png" class="card-img-top" alt="สินค้า 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">TURBO-18</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿8500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 5 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="V-18PRO.html" style="text-decoration: none;">
+                <div class="card">
+                   <img src="pictureweb/V-18pro-2-removebg-preview.png" class="card-img-top" alt="สินค้า 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">V-18Pro</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿8500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 5 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="WSS-18.html" style="text-decoration: none;">
+                <div class="card">
+                   <img src="pictureweb/Wss-18-3-removebg-preview.png" class="card-img-top" alt="สินค้า 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">WSS-18</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿8500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="link"><a href="BV-18x.html" style="text-decoration: none;">
+                <div class="card">
+                   <img src="pictureweb/BV-18x-removebg-preview.png" class="card-img-top" alt="สินค้า 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">BV-18</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿8500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <div class="swiper-slide">
+              <div class="link"><a href="B1000-18.html" style="text-decoration: none;">
+                <div class="card">
+                   <img src="pictureweb/B1000-18.jpg" class="card-img-top" alt="สินค้า 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">B1000-18</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿8500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+          </div>
+          <!-- ปุ่มเลื่อน -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- เซ็ตเครื่องเสียง -->
+   <div class="mainbox">
+    <div class="box">
+      <div class="container-section-gap">
+        <div class="t"><h2 class="text-lefts">เซ็ตเครื่องเสียง/Audio Set</h2><a href="เซ็ตเครื่องเสียง.html " class="link"><h2 class="text-right">ดูทั้งหมด</h2></a></div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+
+            <!-- สินค้า 1 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Set-Audio-1.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="setaudio/Set-Audio-1-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">SetAudio-1</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿180800</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 3 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Set-Audio-2.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="setaudio/set-audio-2-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">SetAudio-2</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿365500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 4 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Set-Audio-3.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="setaudio/set-audio-3-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">SetAudio-3</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿77000</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 5 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Set-Audio-4.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="setaudio/set-audio-4-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">SetAudio-4</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿100800</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 6 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Set-Audio-5.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="setaudio/set-audio-5-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">SetAudio-5</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿139900</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 7 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Set-Audio-6.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="setaudio/set-audio-6-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">SetAudio-6</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿77200</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 8 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Set-Audio-7.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="setaudio/set-audio-7-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">SetAudio-7</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿196200</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+           
+
+
+          </div>
+          <!-- ปุ่มเลื่อน -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ดอกลำโพง -->
+  <div class="mainbox">
+    <div class="box">
+      <div class="container-section-gap">
+        <div class="t"><h2 class="text-lefts">ดอกลำโพง/LoundSpeaker </h2><a href="ดอกลำโพง.html" class="link"><h2 class="text-right"> ดูทั้งหมด</h2></a></div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+
+            <!-- สินค้า 1 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="KANE-NEO12.html" style="text-decoration: none;">
+                <div class="card">
+                <img src="loundspeaker/szl781-removebg-preview.png" class="card-img-top" alt="สินค้า 1">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Kane NEO12</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿1950</div>
+                    </div>
+                  </div>
+                  </a>
+              </div>
+              
+            </div>
+
+
+            <!-- สินค้า 2 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="PR-18_2200*40.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="loundspeaker/PR-18-1-removebg-preview.png" class="card-img-top" alt="สินค้า 2" >
+                    <div class="card-body text-center">
+                      <h5 class="card-title">PR Audio PR-18</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿3500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 3 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="STA-12Ev.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="loundspeaker/STA-12Ev-2-removebg-preview.png" class="card-img-top" alt="สินค้า 3"  >
+                    <div class="card-body text-center">
+                      <h5 class="card-title">STA-12EV(i)</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿2500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 4 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="STA-12B&C-Neodiem.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="loundspeaker/STA-12B_C-Neodiem-2-removebg-preview (1).png" class="card-img-top" alt="สินค้า 4">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">STA-12B&C-Neo</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿3800</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 5 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="STA-LA12B&C-V2.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="loundspeaker/STA-LA12B_C-V2-2-removebg-preview-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">STA-LA12B&C-V2</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿2300</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 6 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="STA-L10RCF.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="loundspeaker/STA-L10RCF-2-removebg-preview-removebg-preview.png" class="card-img-top" alt="สินค้า 6">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">STA-L10RCF</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿2690</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 7 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="STA-15BM.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="loundspeaker/STA-15BM-1-removebg-preview.png" class="card-img-top" alt="สินค้า 7">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">STA-15BM</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿2500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 8 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="STA-Neo10.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="loundspeaker/STA-12B_C-neo-2-removebg-preview.png" class="card-img-top" alt="สินค้า 8">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">STA-Neo10</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿2490</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 9 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="KANE-PRICK.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="loundspeaker/KANE-Prik-1-removebg-preview.png" class="card-img-top" alt="สินค้า 9">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">KANE พริกขี้หนู</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿1590</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+          </div>
+          <!-- ปุ่มเลื่อน -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- พาวเวอร์แอมป์ -->
+  <div class="mainbox">
+    <div class="box">
+      <div class="container-section-gap">
+       <div class="t"> <h2 class="text-lefts">พาวเวอร์แอมป์/Power Amplifier</h2><a href="พาวเวอร์แอมป์.html " class="link"><h2 class="text-right">ดูทั้งหมด</h2></a></div>
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+
+            <!-- สินค้า 1 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Wss-sd-2400.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="PowerAmp/S__61710351_0-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">WSS<br>
+                        SD2400</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿32900</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+
+            <!-- สินค้า 2 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Wss-sd-1460.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="PowerAmp/S__61710353_0-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">WSS<br>SD1460</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿25900</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 3 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Microtech-mt4-800d.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="PowerAmp/MICROTECH-MT4-800D-1-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">MICROTECH-MT4-800D</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿14500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 4 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Microtech-mt4-1000d.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="PowerAmp/MICROTECH-MT4-1000D-1-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">MICROTECH-MT4-1000D</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿16500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 5 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Microtech-mt4-1500d.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="PowerAmp/MICROTECH-MT_-1500D-1-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">MICROTECH-MT4-1500D</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿18500</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+            <!-- สินค้า 6 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Microtech-mt4-1500td.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="PowerAmp/MICROTECH-MT4-1500TD-1-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">MICROTECH-MT4-15000TD</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿28900</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 7 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Microtech-mt4-2000td.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="PowerAmp/MICROTECH-MT4-2000TD-1-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">MICROTECH-MT4-20000TD</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿31900</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 8 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Microtech-mt-4800.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="PowerAmp/MICROTECH-MT-4800-1-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">MICROTECH-MT-4800</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿15900</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+            <!-- สินค้า 9 -->
+            <div class="swiper-slide">
+              <div class="link"><a href="Microtech-mt-1800td.html" style="text-decoration: none;">
+                <div class="card">
+                 <img src="PowerAmp/MICROTECH-MT-1800TD-1-removebg-preview.png" class="card-img-top" alt="สินค้า 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">MICROTECH-MT-1800TD</h5>
+                      <p class="card-text">รายละเอียดสินค้า</p>
+                      <div class="price"> ฿17990</div>
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+
+
+          </div>
+          <!-- ปุ่มเลื่อน -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 
+ 
+
+
+
+  <!-- footer อย่ายุ่ง -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <!-- คอลัมน์ 1: ข้อมูลบริษัท -->
+        <div class="col-md-3 col-sm-6 mb-3">
+          <h5 class="fw-bold">หจก.วีระพงษ์ซาวด์ ซิสเทม</h5>
+          <p>ที่อยู่บริษัท : <br>212/17 ถ.อุดรธานี-สกลนคร จ.อุดรธานี 41130</p>
+          <p>เบอร์โทร : 087-8592264<br>มือถือ : 098-6294255</p>
+          <p>อีเมล : weerapongaudio@gmail.com</p>
+          <div class="mt-2">
+            <a href="https://www.facebook.com/weerapong.sound.system"><img
+                src="https://img.icons8.com/color/48/facebook-new.png" width="24" alt="Facebook"></a>
+            <a href="https://line.me/ti/p/-LlBfCZKfh"><img src="https://img.icons8.com/color/48/line-me.png" width="24" alt="Line"></a>
+            <a href="#"><img src="th-removebg-preview.png" width="24" alt="Tiktok"></a>
+
+          </div>
+        </div>
+
+        <!-- คอลัมน์ 2: ช่องทางการสั่งซื้อ -->
+        <div class="col-md-3 col-sm-6 mb-3">
+          <h5 class="fw-bold">ช่องทางการสั่งซื้อ</h5>
+          <p>แอดไลน์ : @wss_sound</p>
+          <p>FB : Wss Speaker</p>
+          <p>Youtube / IG / Tiktok<br>LAZADA / SHOPEE</p>
+        </div>
+
+        <!-- คอลัมน์ 3: บริการลูกค้า -->
+        <div class="col-md-3 col-sm-6 mb-3">
+          <h5 class="fw-bold">บริการลูกค้า</h5>
+          <ul class="list-unstyled">
+            <li>ติดต่อฝ่ายขาย</li>
+            <li>ขอใบเสนอราคา</li>
+          </ul>
+          <h6 class="fw-bold mt-3">วิธีการชำระเงิน</h6>
+          <img src="https://tse2.mm.bing.net/th?id=OIP.xL03XjjZ7shCuc0VYH4jOwHaCR&pid=Api&P=0&h=180" width="36"
+            alt="Visa">
+          <img src="https://tse3.mm.bing.net/th?id=OIP.MZnfDm0dqmsgpVw55gCW2AHaEK&pid=Api&P=0&h=180" width="36"
+            alt="MasterCard">
+          <img src="https://tse2.mm.bing.net/th?id=OIP.RVyKUNoDTPBULH3xUjoW8wHaE9&pid=Api&P=0&h=180" width="36"
+            alt="PromtPay">
+        </div>
+
+        <!-- คอลัมน์ 4: เมนูหลัก -->
+        <div class="col-md-3 col-sm-6 mb-3">
+          <h5 class="fw-bold">เมนูหลัก</h5>
+          <ul class="list-unstyled">
+            <li><a href="mainweb.html" class="text-light text-decoration-none">เกี่ยวกับเรา</a></li>
+            <li><a href="mainweb.html" class="text-light text-decoration-none">สินค้า</a></li>
+            <li><a href="mainweb.html" class="text-light text-decoration-none">บริการ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="bg-light">
+
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 Weerapong Sound System</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      slidesPerView: 6,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      breakpoints: {
+        1200: { slidesPerView: 6 },
+        992: { slidesPerView: 4 },
+        768: { slidesPerView: 2 },
+        480: { slidesPerView: 1 },
+        0: { slidesPerView: 1 }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
